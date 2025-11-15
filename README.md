@@ -23,7 +23,7 @@ This system allows you to:
 ✔ Keep everything offline — 100% private
 
 🖼 User Interface
-<div align="center"> <img src="images/ui_preview.png" width="850"/> </div>
+<div align="center"> <img src="chatbot2.png" width="850"/> </div>
 🧩 System Architecture
 <div align="center"> <img src="images/anni_rag_architecture.png" width="900"/> </div>
 ⚡ Key Features
