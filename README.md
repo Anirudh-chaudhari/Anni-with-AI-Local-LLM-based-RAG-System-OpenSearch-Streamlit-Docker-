@@ -1,53 +1,77 @@
 🧠 Anni with AI – Local LLM-based RAG System
-Private · Offline · OpenSearch-Powered · Streamlit UI · Docker Ready
-Local · Private · Intelligent
-<p align="center"> <img src="images/anni_banner_dark.png" width="80%"> </p>
+Private • Offline • OpenSearch-Powered • Streamlit UI • Docker Ready
+<div align="center"> <img src="images/anni_banner_dark.png" width="750"/> </div>
+🚀 Overview
 
-Welcome to Anni with AI, a fully offline Retrieval-Augmented Generation (RAG) system built using Local LLMs (Ollama), OpenSearch, and Streamlit, with full Docker support for seamless deployment.
+Anni with AI is a fully offline Retrieval-Augmented Generation (RAG) system using:
+
+🧠 Local LLMs via Ollama
+
+🔍 OpenSearch for vector + BM25 hybrid search
+
+🎨 Streamlit for a clean chatbot interface
+
+🐳 Full Docker support for deployment
 
 This system allows you to:
 
-🔹 Upload & index PDF documents
-🔹 Extract text (OCR optional)
-🔹 Create high-quality embeddings
-🔹 Store vectors + metadata in OpenSearch
-🔹 Query with a RAG-powered AI Chatbot
-🔹 Fully offline — 100% privacy preserved
+✔ Upload and index your PDF documents
+✔ Extract and clean text (OCR optional)
+✔ Generate high-quality embeddings
+✔ Store vectors + metadata inside OpenSearch
+✔ Query documents using a RAG-powered chatbot
+✔ Keep everything offline — 100% private
 
-🖼 System Architecture
-<p align="center"> <img src="images/anni_rag_architecture_dark.png" width="85%"> </p>
+🖼 User Interface
+<div align="center"> <img src="images/ui_preview.png" width="850"/> </div>
+🧩 System Architecture
+<div align="center"> <img src="images/anni_rag_architecture.png" width="900"/> </div>
 ⚡ Key Features
 🔐 100% Local & Privacy-Friendly
 
-Everything runs on your machine — no cloud, no external API calls.
+Everything runs on your device — no external APIs, no cloud involvement.
 
 🧠 Hybrid Search (BM25 + Semantic)
 
-OpenSearch combines keyword scoring + vector similarity.
+Powered by OpenSearch for:
+
+keyword matching (BM25)
+
+vector similarity search
 
 🤖 Local LLM Chatbot (Ollama)
 
-Supports any Ollama model:
+Supports any local model:
 
 llama3.2:1b (fastest)
 
 llama3.2:3b
 
-nomic-embed
+nomic-embed-text
 
-Any model available in Ollama
+or any model available via Ollama
 
 📄 Full RAG Pipeline
 
-PDF → Text → Cleaning → Chunking → Embeddings → OpenSearch → Retrieval → LLM Answer
+PDF → OCR → Clean Text → Chunking → Embeddings → OpenSearch → Answer
 
-🎨 Beautiful Streamlit UI
+🎨 Modern Streamlit UI
 
-Custom branded theme, clean sidebar, sliders, chat view.
+Beautiful sidebar
+
+Logo branding
+
+Temperature slider
+
+RAG enable/disable toggle
+
+Chat history memory
 
 🐳 Docker Support
 
-Run the entire stack reproducibly inside containers.
+Spin up the entire stack using:
+
+docker-compose up -d
 
 🚀 Getting Started
 1️⃣ Clone the Repository
@@ -61,62 +85,66 @@ conda activate rag311
 3️⃣ Install Dependencies
 pip install -r requirements.txt
 
-4️⃣ Start OpenSearch (Recommended: Docker)
+4️⃣ Start OpenSearch (Recommended via Docker)
 docker-compose up -d
 
-5️⃣ Run the Streamlit App
+5️⃣ Run the Local RAG App
 streamlit run Welcome.py
 
 
-➡ Visit: http://localhost:8501
+🌐 App will open automatically at:
+👉 http://localhost:8501
 
 🔧 Configuration
 
-Edit file: src/constants.py
+All settings are inside:
+
+src/constants.py
 
 Variable	Description
-EMBEDDING_MODEL_PATH	SentenceTransformer model
-OLLAMA_MODEL_NAME	Local LLM
-OPENSEARCH_INDEX	Vector index name
-TEXT_CHUNK_SIZE	Chunk size for splitting
-EMBEDDING_DIM	Embedding dimension
-OPENSEARCH_HOST	Host (default: localhost)
-OPENSEARCH_PORT	Port (default: 9200)
+EMBEDDING_MODEL_PATH	Path to SentenceTransformer model
+OLLAMA_MODEL_NAME	Local LLM name (e.g., llama3.2:1b)
+OPENSEARCH_INDEX	Vector DB index name
+TEXT_CHUNK_SIZE	Chunk size for splitting documents
+EMBEDDING_DIM	Dimension of embedding vectors
+OPENSEARCH_HOST	Default: localhost
+OPENSEARCH_PORT	Default: 9200
 🧩 Tech Stack Overview
 Component	Technology
-LLM	Ollama (llama3.2:1b, etc.)
+LLM	Ollama
 Vector DB	OpenSearch
 Embeddings	Sentence Transformers
 OCR	PyPDF2 / Tesseract
-UI	Streamlit
+Frontend	Streamlit
 Backend	Python
 Deployment	Docker
-✨ Extra Enhancements Included
+✨ Optional Enhancements (Included)
 
-✔ Delete documents from index
+✔ Delete documents from database
+✔ Metadata-powered search
 ✔ Auto-clean text
-✔ Metadata-based search
-✔ Chat history memory
-✔ Temperature control
+✔ Chat history in prompts
+✔ Temperature control slider
 ✔ Adjustable Top-K retrieval
-✔ Debug logs for ingestion & search
+✔ Debug logs for ingestion + search
 
 🖋 License
-
 MIT License
-Copyright © 2024 Anirudh
+Copyright (c) 2024 Anirudh
 
 ⭐ Support
 
-If this project helped you:
+If this project helps you:
 
-⭐ Star the repo
+🌟 Star the repo
 🍴 Fork it
-🐛 Report bugs
-💡 Suggest improvements
+🐛 Report an issue
+💬 Request new features
 
 👨‍💻 Author
 
 Anirudh Chaudhari
-Creator of Anni with AI – Local RAG Chatbot
-🔗 GitHub: https://github.com/Anirudh-chaudhari
+Creator of Anni with AI – Local LLM-based RAG Chatbot
+
+🔗 GitHub:
+https://github.com/Anirudh-chaudhari
