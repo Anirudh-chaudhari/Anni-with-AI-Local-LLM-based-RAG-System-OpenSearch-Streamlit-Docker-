@@ -16,17 +16,17 @@ from src.opensearch import get_opensearch_client
 from src.utils import chunk_text, setup_logging
 
 # Initialize logger
-setup_logging()  # Set up centralized logging configuration
+setup_logging()
 logger = logging.getLogger(__name__)
 
-# Set page config with title, icon, and layout
-st.set_page_config(page_title="Jam with AI - Upload Documents", page_icon="📂")
+# ---------------- BRANDING UPDATE ----------------
+st.set_page_config(page_title="Anni with AI – Upload Documents", page_icon="📂")
+# -------------------------------------------------
 
-# Custom CSS to style the page and sidebar
+# Custom CSS (UNCHANGED)
 st.markdown(
     """
     <style>
-    /* Main background and text colors */
     body { background-color: #f0f8ff; color: #002B5B; }
     .sidebar .sidebar-content { background-color: #006d77; color: white; padding: 20px; border-right: 2px solid #003d5c; }
     .sidebar h2, .sidebar h4 { color: white; }
@@ -42,20 +42,22 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Add a logo (replace with your own image file path or URL)
-logo_path = "images/jamwithai_logo.png"  # Replace with your logo file
+# ---------------- BRANDING UPDATE ----------------
+# Replace old logo with your logo
+logo_path = r"C:\Users\asus\build_your_local_RAG_system\images\Chatbot.png"
 if os.path.exists(logo_path):
-    st.sidebar.image(logo_path, width=220)
+    st.sidebar.image(logo_path, width=280)
 else:
     st.sidebar.markdown("### Logo Placeholder")
-    logger.warning("Logo not found, displaying placeholder.")
+    logger.warning("Logo not found – showing placeholder.")
 
 # Sidebar header
 st.sidebar.markdown(
-    "<h2 style='text-align: center;'>Jam with AI</h2>", unsafe_allow_html=True
+    "<h2 style='text-align: center;'>Anni with AI</h2>",
+    unsafe_allow_html=True,
 )
 st.sidebar.markdown(
-    "<h4 style='text-align: center;'>Your Document Assistant</h4>",
+    "<h4 style='text-align: center;'>RAG Document Assistant</h4>",
     unsafe_allow_html=True,
 )
 
@@ -63,47 +65,38 @@ st.sidebar.markdown(
 st.sidebar.markdown(
     """
     <div class="footer-text">
-        © 2025 Jam with AI
+        © 2025 Anni with AI – RAG Chatbot
     </div>
     """,
     unsafe_allow_html=True,
 )
+# -------------------------------------------------
 
 
 def render_upload_page() -> None:
-    """
-    Renders the document upload page for users to upload and manage PDFs.
-    Shows only the documents that are present in the OpenSearch index.
-    """
-
     st.title("Upload Documents")
-    # Placeholder for the loading spinner at the top
+    
     model_loading_placeholder = st.empty()
 
-    # Display the loading spinner at the top for loading the embedding model
     if "embedding_models_loaded" not in st.session_state:
         with model_loading_placeholder:
             with st.spinner("Loading models for document processing..."):
                 get_embedding_model()
                 st.session_state["embedding_models_loaded"] = True
         logger.info("Embedding models loaded.")
-        model_loading_placeholder.empty()  # Clear the placeholder after loading
+        model_loading_placeholder.empty()
 
     UPLOAD_DIR = "uploaded_files"
     os.makedirs(UPLOAD_DIR, exist_ok=True)
 
-    # Initialize OpenSearch client
     with st.spinner("Connecting to OpenSearch..."):
         client = get_opensearch_client()
     index_name = OPENSEARCH_INDEX
 
-    # Ensure the index exists
     create_index(client)
 
-    # Initialize or clear the documents list in session state
     st.session_state["documents"] = []
 
-    # Query OpenSearch to get the list of unique document names
     query = {
         "size": 0,
         "aggs": {"unique_docs": {"terms": {"field": "document_name", "size": 10000}}},
@@ -113,7 +106,6 @@ def render_upload_page() -> None:
     document_names = [bucket["key"] for bucket in buckets]
     logger.info("Retrieved document names from OpenSearch.")
 
-    # Load document information from the index
     for document_name in document_names:
         file_path = os.path.join(UPLOAD_DIR, document_name)
         if os.path.exists(file_path):
@@ -134,7 +126,6 @@ def render_upload_page() -> None:
         )
         del st.session_state["deleted_file"]
 
-    # Allow users to upload PDF files
     uploaded_files = st.file_uploader(
         "Upload PDF documents", type="pdf", accept_multiple_files=True
     )
@@ -202,9 +193,6 @@ def render_upload_page() -> None:
                                 st.error(
                                     f"File '{doc['filename']}' not found in filesystem."
                                 )
-                                logger.error(
-                                    f"File '{doc['filename']}' not found during deletion."
-                                )
                         delete_documents_by_document_name(doc["filename"])
                         st.session_state["documents"].pop(idx - 1)
                         st.session_state["deleted_file"] = doc["filename"]
@@ -212,16 +200,7 @@ def render_upload_page() -> None:
                         st.rerun()
 
 
-def save_uploaded_file(uploaded_file) -> str:  # type: ignore
-    """
-    Saves an uploaded file to the local file system.
-
-    Args:
-        uploaded_file: The uploaded file to save.
-
-    Returns:
-        str: The file path where the uploaded file is saved.
-    """
+def save_uploaded_file(uploaded_file) -> str:
     UPLOAD_DIR = "uploaded_files"
     file_path = os.path.join(UPLOAD_DIR, uploaded_file.name)
     with open(file_path, "wb") as f:
