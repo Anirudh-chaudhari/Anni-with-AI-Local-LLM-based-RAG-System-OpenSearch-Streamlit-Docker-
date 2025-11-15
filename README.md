@@ -1,8 +1,6 @@
 🧠 Anni with AI – Local LLM-based RAG System
 Private • Offline • OpenSearch-Powered • Streamlit UI • Docker Ready
-<div align="center"> <img src="Anni_AI_Fig.png" width="750"/> </div>
 🚀 Overview
-
 Anni with AI is a fully offline Retrieval-Augmented Generation (RAG) system using:
 
 🧠 Local LLMs via Ollama
@@ -25,7 +23,7 @@ This system allows you to:
 🖼 User Interface
 <div align="center"> <img src="chatbot2.png" width="850"/> </div>
 🧩 System Architecture
-<div align="center"> <img src="images/anni_rag_architecture.png" width="900"/> </div>
+<div align="center"> <img src="Anni_AI_Fig.png" width="900"/> </div>
 ⚡ Key Features
 🔐 100% Local & Privacy-Friendly
 
