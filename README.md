@@ -14,7 +14,7 @@ The application features a **Streamlit-based chatbot interface** and is **Docker
 ----------------
 
 <div align="center">
-  <img src="./chatbot2.png" width="700" alt="Anni with AI Chatbot UI"/>
+  <img src="./chatbot2.png" width="750" alt="Anni with AI Chatbot UI"/>
 </div>
 
 ---
@@ -23,7 +23,7 @@ The application features a **Streamlit-based chatbot interface** and is **Docker
 ----------------------
 
 <div align="center">
-  <img src="./Anni_AI_Fig.png" width="700" alt="Anni with AI System Architecture"/>
+  <img src="./Anni_AI_Fig.png" width="750" alt="Anni with AI System Architecture"/>
 </div>
 
 ---
