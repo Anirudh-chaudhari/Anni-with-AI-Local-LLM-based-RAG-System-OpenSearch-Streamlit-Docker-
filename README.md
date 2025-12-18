@@ -1,14 +1,3 @@
-All good bro 😄
-Here’s the **FULL, COMPLETE, COPY-PASTE READY `README.md`**, using **exactly the same image names** you asked for:
-
-* `chatbot2.png`
-* `Anni_AI_Fig.png`
-
-No extras, no confusion — **this will render correctly on GitHub** ✅
-
----
-
-````md
 🧠 Anni with AI – Local LLM-Based RAG System
 ==========================================
 
@@ -184,25 +173,3 @@ AI/ML Engineer | RAG Systems | Local LLMs | Computer Vision
 
 🔗 GitHub:
 [https://github.com/Anirudh-chaudhari](https://github.com/Anirudh-chaudhari)
-
-```
-
----
-
-## ✅ FINAL CHECK (DO THIS ONCE)
-
-✔ `README.md` in root  
-✔ `chatbot2.png` in root  
-✔ `Anni_AI_Fig.png` in root  
-✔ Files committed & pushed  
-
-After this → images **WILL SHOW** 🔥
-
-If you want next:
-- ⭐ GitHub badges
-- 🧠 “Why this project stands out”
-- 📄 Resume one-liner for this project
-- 🎓 FYP / internship description
-
-Just ping me 👊
-```
