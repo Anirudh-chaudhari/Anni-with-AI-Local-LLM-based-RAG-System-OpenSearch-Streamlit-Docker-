@@ -1,7 +1,10 @@
-Perfect 👍
-Below is your **updated GitHub-ready `README.md`** with the **UI and Architecture diagrams added cleanly**, exactly in the same **professional style** as your example.
+All good bro 😄
+Here’s the **FULL, COMPLETE, COPY-PASTE READY `README.md`**, using **exactly the same image names** you asked for:
 
-You can **copy–paste this directly** — GitHub will render the images perfectly.
+* `chatbot2.png`
+* `Anni_AI_Fig.png`
+
+No extras, no confusion — **this will render correctly on GitHub** ✅
 
 ---
 
@@ -22,7 +25,7 @@ The application features a **Streamlit-based chatbot interface** and is **Docker
 ----------------
 
 <div align="center">
-  <img src="chatbot2.png" width="850"/>
+  <img src="./chatbot2.png" width="850" alt="Anni with AI Chatbot UI"/>
 </div>
 
 ---
@@ -31,7 +34,7 @@ The application features a **Streamlit-based chatbot interface** and is **Docker
 ----------------------
 
 <div align="center">
-  <img src="Anni_AI_Fig.png" width="900"/>
+  <img src="./Anni_AI_Fig.png" width="900" alt="Anni with AI System Architecture"/>
 </div>
 
 ---
@@ -69,6 +72,9 @@ The application features a **Streamlit-based chatbot interface** and is **Docker
 ```text
 Anni-with-AI/
 │
+├── README.md
+├── chatbot2.png
+├── Anni_AI_Fig.png
 ├── Welcome.py              # Streamlit entry point
 ├── src/
 │   ├── ingestion.py        # Document ingestion & indexing
@@ -78,7 +84,6 @@ Anni-with-AI/
 │
 ├── docker-compose.yml      # OpenSearch & services
 ├── requirements.txt
-├── README.md
 ````
 
 ---
@@ -92,6 +97,8 @@ git clone https://github.com/Anirudh-chaudhari/Anni-with-AI-Local-LLM-based-RAG-
 cd Anni-with-AI-Local-LLM-based-RAG-System-OpenSearch-Streamlit-Docker-
 ```
 
+---
+
 ### 2️⃣ Create Conda Environment
 
 ```bash
@@ -99,17 +106,23 @@ conda create -n rag311 python=3.11 -y
 conda activate rag311
 ```
 
+---
+
 ### 3️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
+---
+
 ### 4️⃣ Start OpenSearch (Recommended)
 
 ```bash
 docker-compose up -d
 ```
+
+---
 
 ### 5️⃣ Run the Application
 
@@ -171,3 +184,25 @@ AI/ML Engineer | RAG Systems | Local LLMs | Computer Vision
 
 🔗 GitHub:
 [https://github.com/Anirudh-chaudhari](https://github.com/Anirudh-chaudhari)
+
+```
+
+---
+
+## ✅ FINAL CHECK (DO THIS ONCE)
+
+✔ `README.md` in root  
+✔ `chatbot2.png` in root  
+✔ `Anni_AI_Fig.png` in root  
+✔ Files committed & pushed  
+
+After this → images **WILL SHOW** 🔥
+
+If you want next:
+- ⭐ GitHub badges
+- 🧠 “Why this project stands out”
+- 📄 Resume one-liner for this project
+- 🎓 FYP / internship description
+
+Just ping me 👊
+```
